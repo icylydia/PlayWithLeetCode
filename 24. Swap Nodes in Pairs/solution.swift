@@ -11,15 +11,18 @@
  */
 class Solution {
     func swapPairs(head: ListNode?) -> ListNode? {
-    	var before = nil
+        var before: ListNode? = nil
         var cur = head
-        var ans = head.next ?? head
+        var ans = head?.next ?? head
         while let a = cur, b = a.next {
-        	before?.next = b
-        	cur = b.next
-        	b.next = a
-        	a.next = nil
-        	before = a
+            before?.next = b
+            cur = b.next
+            b.next = a
+            a.next = nil
+            before = a
+        }
+        if let a = cur {
+            before?.next = a
         }
         return ans
     }
