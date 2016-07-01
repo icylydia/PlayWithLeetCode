@@ -13,7 +13,7 @@
  */
 class Solution {
     func sumNumbers(root: TreeNode?) -> Int {
-        return helper(root)
+        return helper(root, base: 0)
     }
     func helper(root: TreeNode?, base: Int) -> Int {
         if let root = root {
